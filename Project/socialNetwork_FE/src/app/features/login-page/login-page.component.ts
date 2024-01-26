@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-login-page',
@@ -16,7 +17,8 @@ ngOnInit(): void {
 
 
 constructor(
-  private fb: FormBuilder
+  private fb: FormBuilder,
+  private authService:AuthService
   ){}
 
 createForm(): any {
@@ -34,7 +36,9 @@ get passwordForm(){
   return this.loginForm.get('password')
 }
 submitLogin() {
-  //TO DO SERVICE
+ this.authService.login(this.loginForm?.value).subscribe(res=>{
+  console.log(res)
+ })
 }
 
 }
