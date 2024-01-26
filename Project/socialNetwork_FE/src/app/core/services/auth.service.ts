@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Utente } from '../models/utente.interface';
 import { BehaviorSubject, Observable, catchError, map, of } from 'rxjs';
@@ -25,9 +25,12 @@ export class AuthService {
   }
 
   login(data: Login): Observable<Utente | null> {
-    const url = `${this.appConf.baseUrl}${this.appConf.endpoints.auth.baseUrl}?username=${data.username}&password=${data.password}`;
- 
-    return this.http.get<AuthData>(url)
+    const params = new HttpParams({
+      fromObject: { 
+        usernameOrEmail : data.usernameOrEmail,
+        password:data.password
+      }})
+    return this.http.get<AuthData>(`${this.appConf.baseUrl}${this.appConf.endpoints.auth.baseUrl}`,{params})
       .pipe(
         map((authData: AuthData) => {
           this.isLoggedIn = true;
