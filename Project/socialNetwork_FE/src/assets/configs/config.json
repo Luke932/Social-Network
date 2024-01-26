@@ -1,0 +1,11 @@
+{
+    "baseUrl":"http://localhost:3000",
+    "endpoints":{
+        "auth":{
+            "baseUrl":"/auth"
+        },
+        "post":{
+            "baseUrl":"/post"
+        }
+    }
+}
