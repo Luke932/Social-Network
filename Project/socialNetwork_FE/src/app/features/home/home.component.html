@@ -1,0 +1,6 @@
+<button mat-button routerLink="addPost"> add post</button>
+<div *ngFor="let post of posts">
+    <app-posts [post]="post"></app-posts>
+</div>
+
+<router-outlet></router-outlet>

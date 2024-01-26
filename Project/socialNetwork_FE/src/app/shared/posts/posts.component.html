@@ -1,0 +1,19 @@
+<mat-card class="example-card custom-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{post.titolo}}</mat-card-title>
+      <mat-card-subtitle>@{{post.u.username}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="post.pathImg" alt="photo">
+    <mat-card-content>
+      {{post.descrizione}}
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button >LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+    <mat-card-footer>
+      {{post.dataPost}}
+    </mat-card-footer>
+  </mat-card>
+  

@@ -99,5 +99,40 @@
       "email": "xcz@cd.cd",
       "password": "cdsa"
     }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "titolo": "title",
+      "pathImg": "fr",
+      "descrizione": "wqqqqqqqqqq",
+      "dataPost": "12-12-2022",
+      "u": {
+        "id": "1",
+        "nome": "Luca",
+        "congome": " Giacalone",
+        "username": "Luke",
+        "email": "luke@luke.it",
+        "password": "1234",
+        "eta": 19
+      }
+    },
+    {
+      "id": 2,
+      "titolo": "test",
+      "pathImg": "ds",
+      "descrizione": "das",
+      "dataPost": "12-12-2022",
+      "u": {
+        "id": "1",
+        "nome": "Luca",
+        "congome": " Giacalone",
+        "username": "Luke",
+        "email": "luke@luke.it",
+        "password": "1234",
+        "eta": 19
+      }
+    }
+    
   ]
 }

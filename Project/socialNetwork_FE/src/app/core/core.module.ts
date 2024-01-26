@@ -3,7 +3,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AuthService } from './services/auth.service';
-import { MaterialModule } from './../shared/material.module';
+import { materialModule } from './../shared/material.module';
 import { ConfigService } from './services/config.service';
 import { HttpClientModule } from '@angular/common/http';
 import {
@@ -14,7 +14,7 @@ import {
 
 @NgModule({
   declarations: [NavbarComponent],
-  imports: [CommonModule, RouterModule, HttpClientModule, MaterialModule],
+  imports: [CommonModule, RouterModule, HttpClientModule, ...materialModule],
   exports: [NavbarComponent],
 })
 export class CoreModule {

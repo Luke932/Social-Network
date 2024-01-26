@@ -4,8 +4,8 @@
         "auth":{
             "baseUrl":"/auth"
         },
-        "post":{
-            "baseUrl":"/post"
+        "posts":{
+            "baseUrl":"/posts"
         }
     }
 }
