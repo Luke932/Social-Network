@@ -1,0 +1,18 @@
+<!-- navbar.component.html -->
+<nav>
+    <mat-toolbar [ngClass]="{'mat-dark': configService.theme === themeEnum.Dark, 'custom-dark-theme': configService.theme === themeEnum.Dark}">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="space">My App</span>
+      <div class="space" *ngIf="authSrv.isLoggedIn">
+        <span>Hello, {{ authSrv.username }}</span>
+      </div>
+      <button class="theme" mat-button (click)="configService.setTheme()">Toggle Theme</button>
+      <span class="example-spacer"></span>
+      <button mat-button routerLink="login-page">Login</button>
+      <button mat-button routerLink="posts-page">Posts</button>
+      <button class="logout" mat-button (click)="authSrv.logout()">Logout</button>
+    </mat-toolbar>
+  </nav>
+  
