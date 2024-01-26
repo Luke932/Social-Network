@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PostsComponent } from './posts.component';
+import { MaterialModule } from 'src/app/shared/material.module';
+import { PostPageRoutingModule } from './posts.routing.module';
 
 
 
@@ -10,6 +12,8 @@ import { PostsComponent } from './posts.component';
   ],
   imports: [
     CommonModule,
+    MaterialModule,
+    PostPageRoutingModule
   ]
 })
 export class PostsModule { }
