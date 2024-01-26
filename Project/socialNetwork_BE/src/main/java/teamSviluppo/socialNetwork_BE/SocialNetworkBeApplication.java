@@ -10,4 +10,5 @@ public class SocialNetworkBeApplication {
 		SpringApplication.run(SocialNetworkBeApplication.class, args);
 	}
 
+
 }
