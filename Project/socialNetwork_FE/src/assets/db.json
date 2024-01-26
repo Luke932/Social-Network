@@ -1,0 +1,49 @@
+{
+  "auth": [
+    {
+      "id": "1",
+      "nome": "Luca",
+      "congome": " Giacalone",
+      "username": "Luke",
+      "email": "luke@luke.it",
+      "password": "1234",
+      "eta": 19
+    },
+    {
+      "id": "2",
+      "nome": "Luca",
+      "congome": " Giacalone",
+      "username": "Luke",
+      "email": "luke@luke.it",
+      "password": "1234",
+      "eta": 19
+    },
+    {
+      "id": "0bea",
+      "username": "adsdas",
+      "nome": "dasdsa",
+      "cognome": "dasdas",
+      "eta": 19,
+      "email": "s@a.a",
+      "password": "adsdas"
+    },
+    {
+      "id": "c80f",
+      "username": "adsdas",
+      "nome": "dasdsa",
+      "cognome": "dasdas",
+      "eta": 19,
+      "email": "s@a.a",
+      "password": "adsdas"
+    },
+    {
+      "id": "ae7c",
+      "username": "adsdas",
+      "nome": "dasdsa",
+      "cognome": "dasdas",
+      "eta": 19,
+      "email": "s@a.a",
+      "password": "adsdas"
+    }
+  ]
+}

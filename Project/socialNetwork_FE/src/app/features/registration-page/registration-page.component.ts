@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-registration-page',
@@ -16,7 +17,8 @@ export class RegistrationPageComponent implements OnInit{
   }
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private authService:AuthService
     ){}
   
   createForm(): any {
@@ -50,6 +52,8 @@ export class RegistrationPageComponent implements OnInit{
     return this.registrationForm.get('password')
   }
   submitRegistration() {
-    console.log(this.registrationForm)
+   this.authService.signup(this.registrationForm.value).subscribe(res=>{
+    console.log(res)
+   })
   }
 }

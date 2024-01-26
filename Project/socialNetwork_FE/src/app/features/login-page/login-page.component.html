@@ -1,12 +1,12 @@
 <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
     <input type="text" placeholder="Username" formControlName="username">
     <div *ngIf="usernameForm.invalid && (usernameForm.dirty ||usernameForm.touched)">
-        <div *ngIf="usernameForm.errors?.required">Name is Required</div>
+        <div *ngIf="usernameForm.errors?.required">Username is Required</div>
         <div *ngIf="usernameForm.errors?.minlength">Min length must be 3 </div>
     </div>
     <input type="text" placeholder="Password" formControlName="password">
     <div *ngIf="passwordForm.invalid && (passwordForm.dirty ||passwordForm.touched)">
-        <div *ngIf="passwordForm.errors?.required">Ability is Required</div>
+        <div *ngIf="passwordForm.errors?.required">Password is Required</div>
         <div *ngIf="passwordForm.errors?.minlength">Min length must be 4</div>
     </div>
     <button type="submit" [disabled]="loginForm.invalid">Login</button>

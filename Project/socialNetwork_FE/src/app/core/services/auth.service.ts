@@ -19,11 +19,14 @@ export class AuthService {
   constructor(private http: HttpClient, private appConf: AppConfig, private router: Router) { }
 
   signup(user: Utente): Observable<Utente>{
-     return this.http.post<Utente>(`${this.appConf.baseUrl}${this.appConf.endpoints.auth}`, user);
+    console.log(user); 
+     return this.http.post<Utente>(`${this.appConf.baseUrl}${this.appConf.endpoints.auth.baseUrl}`, user);
   }
 
   login(data: Login): Observable<Utente | null> {
-    return this.http.post<AuthData>(`${this.appConf.baseUrl}${this.appConf.endpoints.auth}`, data)
+    const url = `${this.appConf.baseUrl}${this.appConf.endpoints.auth}?username=${data.username}&password=${data.password}`;
+ 
+    return this.http.get<AuthData>(url)
       .pipe(
         map((authData: AuthData) => {
           this.isLoggedIn = true;
@@ -34,7 +37,7 @@ export class AuthService {
         }),
         catchError((error) => {
           // Handle authentication error, e.g., redirect to login page
-          this.router.navigate(['/login']);
+          this.router.navigate(['/login-page']);
           return of(null);
         })
       ); 
