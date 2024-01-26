@@ -5,7 +5,6 @@
     justify-content: center;
     height: 100vh;
     overflow: hidden; /* Evita barras de desplazamiento */
-    background: linear-gradient(to right, #1c1c1c, #383838);
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
@@ -24,12 +23,16 @@
   }
   
   .login-container {
+    background: linear-gradient(to right, #1c1c1c, #383838); /* Aggiungi qui il percorso della tua immagine di sfondo */
+    background-size: cover;
+    background-position: center;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 30px;
     width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  }
+}
+
   
   .login-header {
     text-align: center;
