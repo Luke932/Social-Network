@@ -48,7 +48,7 @@ export class AuthService {
     this.authSubj.next(null);
     this.utente = null;
     this.username = '';
-    this.router.navigate(['/login']);
+    this.router.navigate(['/login-page']);
   }
 }
 

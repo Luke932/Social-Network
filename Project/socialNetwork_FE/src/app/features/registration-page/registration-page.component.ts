@@ -26,8 +26,8 @@ export class RegistrationPageComponent implements OnInit{
       username:['',[Validators.required,Validators.minLength(3)]],
       nome:['',[Validators.required,Validators.minLength(3)]],
       cognome:['',[Validators.required,Validators.minLength(3)]],
-      eta:['',[Validators.required,Validators.min(18),Validators.max(90)]],
-      email:['',[Validators.required,Validators.minLength(3)]],
+      dataNascita:['',[Validators.required]],
+      email:['',[Validators.required,Validators.minLength(3),Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       password:['',[Validators.required,Validators.minLength(4)]]
     })
   }
@@ -41,8 +41,8 @@ export class RegistrationPageComponent implements OnInit{
   get cognomeForm(){
     return this.registrationForm.get('cognome')
   }
-  get etaForm(){
-    return this.registrationForm.get('eta')
+  get dataNascitaForm(){
+    return this.registrationForm.get('dataNascita')
   }
   get emailForm(){
     return this.registrationForm.get('email')
@@ -52,6 +52,7 @@ export class RegistrationPageComponent implements OnInit{
     return this.registrationForm.get('password')
   }
   submitRegistration() {
+    console.log(this.registrationForm)
    this.authService.signup(this.registrationForm.value).subscribe(res=>{
     console.log(res)
    })
