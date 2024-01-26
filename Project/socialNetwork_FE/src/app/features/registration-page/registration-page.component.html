@@ -1,37 +1,73 @@
-<form [formGroup]="registrationForm" (ngSubmit)="submitRegistration()">
-    <input type="text" placeholder="Username" formControlName="username">
-    <div *ngIf="usernameForm.invalid && (usernameForm.dirty ||usernameForm.touched)">
-        <div *ngIf="usernameForm.errors?.required">Username is Required</div>
-        <div *ngIf="usernameForm.errors?.minlength">Min length must be 3 </div>
-    </div>
-    <input type="text" placeholder="Name" formControlName="nome">
-    <div *ngIf="nomeForm.invalid && (nomeForm.dirty ||nomeForm.touched)">
-        <div *ngIf="nomeForm.errors?.required">Name is Required</div>
-        <div *ngIf="nomeForm.errors?.minlength">Min length must be 3 </div>
-    </div>
-    <input type="text" placeholder="Surname" formControlName="cognome">
-    <div *ngIf="cognomeForm.invalid && (cognomeForm.dirty ||cognomeForm.touched)">
-        <div *ngIf="cognomeForm.errors?.required">Surame is Required</div>
-        <div *ngIf="cognomeForm.errors?.minlength">Min length must be 3 </div>
-    </div>
-    <input type="number" placeholder="Eta" formControlName="eta">
-    <div *ngIf="etaForm.invalid && (etaForm.dirty ||etaForm.touched)">
-        <div *ngIf="etaForm.errors?.required">Age is Required</div>
-        <div *ngIf="etaForm.errors?.min">Min age must be 18 </div>
-        <div *ngIf="etaForm.errors?.max">Max age must be 90 </div>
-    </div>
-    <input type="email" placeholder="Email" formControlName="email">
-    <div *ngIf="emailForm.invalid && (emailForm.dirty ||emailForm.touched)">
-        <div *ngIf="emailForm.errors?.required">Email is Required</div>
-        <div *ngIf="emailForm.errors?.minlength">Min length must be 3 </div>
-    </div>
-    <input type="password" placeholder="Password" formControlName="password">
-    <div *ngIf="passwordForm.invalid && (passwordForm.dirty ||passwordForm.touched)">
-        <div *ngIf="passwordForm.errors?.required">Password is Required</div>
-        <div *ngIf="passwordForm.errors?.minlength">Min length must be 3 </div>
-    </div>
-  
 
-    <button type="submit" [disabled]="registrationForm.invalid">Register</button>
-</form>
-<!---Username, Nome, Cognome, Età, email, password, (ruolo?).-->
+<div id="container">
+<div class="background"></div>
+<div class="login-container">
+  <div class="login-header">
+    <h2>Welcome to <span>Almaviva</span></h2>
+    <p>Singup an account</p>
+  </div>
+  <div class="login-form">
+    <form  [formGroup]="registrationForm" (ngSubmit)="submitRegistration()">
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Username" formControlName="username">
+        <div *ngIf="usernameForm.invalid && (usernameForm.dirty ||usernameForm.touched)">
+            <div *ngIf="usernameForm.errors?.required">Username is Required</div>
+            <div *ngIf="usernameForm.errors?.minlength">Min length must be 3 </div>
+        </div>
+    </div>
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Name" formControlName="nome">
+        <div *ngIf="nomeForm.invalid && (nomeForm.dirty ||nomeForm.touched)">
+            <div *ngIf="nomeForm.errors?.required">Name is Required</div>
+            <div *ngIf="nomeForm.errors?.minlength">Min length must be 3 </div>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Surname" formControlName="cognome">
+        <div *ngIf="cognomeForm.invalid && (cognomeForm.dirty ||cognomeForm.touched)">
+            <div *ngIf="cognomeForm.errors?.required">Surame is Required</div>
+            <div *ngIf="cognomeForm.errors?.minlength">Min length must be 3 </div>
+        </div>
+      </div>
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="date" placeholder="Data di nascita" formControlName="dataNascita">
+        <div *ngIf="dataNascitaForm.invalid && (dataNascitaForm.dirty ||dataNascitaForm.touched)">
+            <div *ngIf="dataNascitaForm.errors?.required">Age is Required</div>
+        </div>
+      </div>
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="email" placeholder="Email" formControlName="email">
+        <div *ngIf="emailForm.invalid && (emailForm.dirty ||emailForm.touched)">
+            <div *ngIf="emailForm.errors?.required">Email is Required</div>
+            <div *ngIf="emailForm.errors?.minlength">Min length must be 3 </div>
+            <div *ngIf="emailForm.errors?.pattern">Must be email</div>
+        </div>
+      </div>
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Password" formControlName="password">
+        <div *ngIf="passwordForm.invalid && (passwordForm.dirty ||passwordForm.touched)">
+            <div *ngIf="passwordForm.errors?.required">Password is Required</div>
+            <div *ngIf="passwordForm.errors?.minlength">Min length must be 4 </div>
+        </div>
+      </div>
+      <div class="options">
+        <label for="remember">
+          <input type="checkbox" id="remember"> Remember me
+        </label>
+        
+      </div>
+      <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+    </form>
+  </div>
+  <div class="signup-link">
+    Have already an account? <a routerLink="/login-page">Login</a>
+  </div>
+</div>
+</div>
