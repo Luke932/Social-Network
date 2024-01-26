@@ -6,6 +6,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.validation.annotation.Validated;
 
 import java.util.Date;
@@ -36,6 +37,7 @@ public class Utente {
 
     @Column(name = "data_nascita", nullable = false)
     @NotBlank
+    @DateTimeFormat(fallbackPatterns = "yyyy-MM-dd")
     private Date dataNascita;
 
     @Column(unique = true, nullable = false)
