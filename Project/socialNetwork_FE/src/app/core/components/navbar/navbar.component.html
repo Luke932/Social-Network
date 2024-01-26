@@ -10,9 +10,9 @@
       </div>
       <button class="theme" mat-button (click)="configService.setTheme()">Toggle Theme</button>
       <span class="example-spacer"></span>
-      <button mat-button routerLink="signup-page">Signup</button>
-      <button mat-button routerLink="login-page">Login</button>
-      <button mat-button routerLink="posts-page">Posts</button>
+      <button mat-button [routerLink]="appRouting.registrationPage">Signup</button>
+      <button mat-button [routerLink]="appRouting.loginPage">Login</button>
+      <button mat-button [routerLink]="appRouting.postsPage">Posts</button>
       <button class="logout" mat-button (click)="authSrv.logout()">Logout</button>
     </mat-toolbar>
   </nav>

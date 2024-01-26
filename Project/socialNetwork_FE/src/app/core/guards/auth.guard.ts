@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, CanLoad, Route, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
+import { AppRoutings } from '../configs/app-routings';
 
 @Injectable({
   providedIn: 'root',
@@ -28,7 +29,7 @@ export class AuthGuard implements CanActivate, CanLoad {
       return true; // L'utente è autenticato, consente l'accesso alla pagina
     } else {
       // L'utente non è autenticato, reindirizza alla pagina di login
-      this.router.navigate(['/login']);
+      this.router.navigate([AppRoutings.loginPage]);
       return false;
     }
   }

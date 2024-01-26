@@ -7,6 +7,7 @@ import { AuthData } from '../models/authdata.interface';
 import { Login } from '../models/login.interface';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
+import { AppRoutings } from '../configs/app-routings';
 
 @Injectable()
 export class AuthService {
@@ -24,7 +25,7 @@ export class AuthService {
   }
 
   login(data: Login): Observable<Utente | null> {
-    const url = `${this.appConf.baseUrl}${this.appConf.endpoints.auth}?username=${data.username}&password=${data.password}`;
+    const url = `${this.appConf.baseUrl}${this.appConf.endpoints.auth.baseUrl}?username=${data.username}&password=${data.password}`;
  
     return this.http.get<AuthData>(url)
       .pipe(
@@ -37,7 +38,7 @@ export class AuthService {
         }),
         catchError((error) => {
           // Handle authentication error, e.g., redirect to login page
-          this.router.navigate(['/login-page']);
+          this.router.navigate([AppRoutings.loginPage]);
           return of(null);
         })
       ); 
@@ -48,7 +49,7 @@ export class AuthService {
     this.authSubj.next(null);
     this.utente = null;
     this.username = '';
-    this.router.navigate(['/login-page']);
+    this.router.navigate([AppRoutings.loginPage]);
   }
 }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { AppRoutings } from 'src/app/core/configs/app-routings';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class RegistrationPageComponent implements OnInit{
   registrationForm!: any;
-
+  public appRouting=AppRoutings;
   ngOnInit(): void {
     this.registrationForm=this.createForm();
 
