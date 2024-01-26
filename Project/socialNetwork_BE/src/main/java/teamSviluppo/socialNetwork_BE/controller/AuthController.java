@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import teamSviluppo.socialNetwork_BE.model.Token;
 import teamSviluppo.socialNetwork_BE.model.Utente;
-import teamSviluppo.socialNetwork_BE.payload.UtentePayloadLogin;
 import teamSviluppo.socialNetwork_BE.service.inter.UtenteService;
 
 import java.text.ParseException;
@@ -19,16 +18,14 @@ public class AuthController {
     @Autowired
     private UtenteService utenteService;
 
-    @PostMapping("/login")
-    public ResponseEntity<Token> login(@RequestBody UtentePayloadLogin up){
+    @GetMapping(value = "/login")
+    public ResponseEntity<Token> login(@RequestParam String usernameOrEmail, @RequestParam String password){
 
-        if (up == null){
+        if (usernameOrEmail.isEmpty() || password.isEmpty()){
             return new ResponseEntity<>(new Token(null), HttpStatus.BAD_REQUEST);
         }
 
-
-
-        Utente u = utenteService.getUtente(up.usernameOrEmail());
+        Utente u = utenteService.getUtente(usernameOrEmail);
 
         if (u != null){
             return new ResponseEntity<>(new Token("il mio token"), HttpStatus.OK);
