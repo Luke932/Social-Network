@@ -7,6 +7,12 @@ const routes: Routes = [{
   loadChildren: ()=> import('./features/login-page/login-page.module').then(res=>res.LoginPageModule),    //andiamo ad indicare che quando navighiamo in questo path carico questo modulo
   canActivate:[],
   canLoad:[]
+},{
+  path:AppRoutings.registrationPage,
+  loadChildren: ()=> import('./features/registration-page/registration-page.module').then(res=>res.RegistrationPageModule),    //andiamo ad indicare che quando navighiamo in questo path carico questo modulo
+  canActivate:[],
+  canLoad:[]
+
 }];
 
 @NgModule({

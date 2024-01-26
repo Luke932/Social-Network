@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormsModule, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login-page',
@@ -8,11 +8,9 @@ import { FormBuilder, FormsModule, Validators } from '@angular/forms';
 })
 export class LoginPageComponent implements OnInit{
 loginForm!: any;
-email: any;
 
 ngOnInit(): void {
   this.loginForm=this.createForm();
-  console.log("d");
   
 }
 
@@ -36,7 +34,7 @@ get passwordForm(){
   return this.loginForm.get('password')
 }
 submitLogin() {
-throw new Error('Method not implemented.');
+  //TO DO SERVICE
 }
 
 }
