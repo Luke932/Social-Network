@@ -3,7 +3,7 @@ export interface Utente {
     username: string;
     nome: string;
     cognome: string;
-    eta: number;
+    dataNascita: Date;
     email: string;
     password: string;
    // ruolo?: any;
