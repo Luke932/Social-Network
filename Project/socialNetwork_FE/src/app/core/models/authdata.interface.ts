@@ -5,7 +5,7 @@ export interface AuthData {
       username:string;
       nome: string;
       cognome: string;
-      eta: number;
+      dataNascita: number;
       email: string;
       password: string;
       /*ruolo: {
