@@ -1,25 +1,31 @@
 <form [formGroup]="registrationForm" (ngSubmit)="submitRegistration()">
-    <input type="text" placeholder="Name" formControlName="name">
-    <div *ngIf="nameForm.invalid && (nameForm.dirty ||nameForm.touched)">
-        <div *ngIf="nameForm.errors?.required">Name is Required</div>
-        <div *ngIf="nameForm.errors?.minlength">Min length must be 3 </div>
+    <input type="text" placeholder="Username" formControlName="username">
+    <div *ngIf="usernameForm.invalid && (usernameForm.dirty ||usernameForm.touched)">
+        <div *ngIf="usernameForm.errors?.required">Username is Required</div>
+        <div *ngIf="usernameForm.errors?.minlength">Min length must be 3 </div>
     </div>
-    <input type="text" placeholder="Surname" formControlName="surname">
-    <div *ngIf="surnameForm.invalid && (surnameForm.dirty ||surnameForm.touched)">
-        <div *ngIf="surnameForm.errors?.required">Surame is Required</div>
-        <div *ngIf="surnameForm.errors?.minlength">Min length must be 3 </div>
+    <input type="text" placeholder="Name" formControlName="nome">
+    <div *ngIf="nomeForm.invalid && (nomeForm.dirty ||nomeForm.touched)">
+        <div *ngIf="nomeForm.errors?.required">Name is Required</div>
+        <div *ngIf="nomeForm.errors?.minlength">Min length must be 3 </div>
     </div>
-    <input type="text" placeholder="Age" formControlName="age">
-    <div *ngIf="ageForm.invalid && (ageForm.dirty ||ageForm.touched)">
-        <div *ngIf="ageForm.errors?.required">Age is Required</div>
-        <div *ngIf="ageForm.errors?.min">Min age must be 18 </div>
+    <input type="text" placeholder="Surname" formControlName="cognome">
+    <div *ngIf="cognomeForm.invalid && (cognomeForm.dirty ||cognomeForm.touched)">
+        <div *ngIf="cognomeForm.errors?.required">Surame is Required</div>
+        <div *ngIf="cognomeForm.errors?.minlength">Min length must be 3 </div>
     </div>
-    <input type="text" placeholder="Email" formControlName="email">
+    <input type="number" placeholder="Eta" formControlName="eta">
+    <div *ngIf="etaForm.invalid && (etaForm.dirty ||etaForm.touched)">
+        <div *ngIf="etaForm.errors?.required">Age is Required</div>
+        <div *ngIf="etaForm.errors?.min">Min age must be 18 </div>
+        <div *ngIf="etaForm.errors?.max">Max age must be 90 </div>
+    </div>
+    <input type="email" placeholder="Email" formControlName="email">
     <div *ngIf="emailForm.invalid && (emailForm.dirty ||emailForm.touched)">
         <div *ngIf="emailForm.errors?.required">Email is Required</div>
         <div *ngIf="emailForm.errors?.minlength">Min length must be 3 </div>
     </div>
-    <input type="text" placeholder="Password" formControlName="password">
+    <input type="password" placeholder="Password" formControlName="password">
     <div *ngIf="passwordForm.invalid && (passwordForm.dirty ||passwordForm.touched)">
         <div *ngIf="passwordForm.errors?.required">Password is Required</div>
         <div *ngIf="passwordForm.errors?.minlength">Min length must be 3 </div>

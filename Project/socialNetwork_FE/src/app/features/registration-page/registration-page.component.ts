@@ -21,21 +21,26 @@ export class RegistrationPageComponent implements OnInit{
   
   createForm(): any {
     return this.fb.group({
-      name:['',[Validators.required,Validators.minLength(3)]],
-      surname:['',[Validators.required,Validators.minLength(3)]],
-      dateBirth:['',[Validators.required]],
+      username:['',[Validators.required,Validators.minLength(3)]],
+      nome:['',[Validators.required,Validators.minLength(3)]],
+      cognome:['',[Validators.required,Validators.minLength(3)]],
+      eta:['',[Validators.required,Validators.min(18),Validators.max(90)]],
       email:['',[Validators.required,Validators.minLength(3)]],
       password:['',[Validators.required,Validators.minLength(4)]]
     })
   }
-  get nameForm(){
-    return this.registrationForm.get('name')
+
+  get usernameForm(){
+    return this.registrationForm.get('username')
   }
-  get surnameForm(){
-    return this.registrationForm.get('surname')
+  get nomeForm(){
+    return this.registrationForm.get('nome')
   }
-  get ageForm(){
-    return this.registrationForm.get('age')
+  get cognomeForm(){
+    return this.registrationForm.get('cognome')
+  }
+  get etaForm(){
+    return this.registrationForm.get('eta')
   }
   get emailForm(){
     return this.registrationForm.get('email')

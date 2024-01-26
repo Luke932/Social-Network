@@ -21,13 +21,13 @@ constructor(
 
 createForm(): any {
   return this.fb.group({
-    email:['',[Validators.required,Validators.minLength(3)]],
+    username:['',[Validators.required,Validators.minLength(3)]],
     password:['',[Validators.required,Validators.minLength(4)]]
   })
 }
 
-get emailForm(){
-  return this.loginForm.get('email')
+get usernameForm(){
+  return this.loginForm.get('username')
 }
 
 get passwordForm(){
